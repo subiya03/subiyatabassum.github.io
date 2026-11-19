@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add('js');</script>
+
+<!-- CHANGE: shows on the browser tab and in Google results -->
+<title>Sumayya Tabassum | Video Editor, Social Media & SEO Specialist</title>
+<!-- CHANGE: shows under the title in Google results -->
+<meta name="description" content="Video editing, social media management and marketing, community management, content strategy, Graphic Designing, SEO and blog writing for creators and small businesses.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#EEF1F4; --ink:#16212B; --muted:#4C5B68; --line:#CBD3DA;
+  --teal:#1F7A8C; --green:#3F8F5B; --violet:#6B4E9B; --blue:#3B5BA9;
+  --rose:#D1495B; --amber:#E9B44C; --orange:#C2703D;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"DM Sans","Segoe UI",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.05rem;line-height:1.6}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+
+/* header */
+header{position:sticky;top:0;z-index:10;background:rgba(238,241,244,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-top:14px;padding-bottom:14px}
+.brand{font-family:var(--display);font-weight:800;font-size:1.15rem;text-decoration:none}
+nav{display:flex;gap:20px;flex-wrap:wrap}
+nav a{text-decoration:none;font-weight:500;color:var(--muted);background:linear-gradient(var(--teal),var(--teal)) 0 100%/0 2px no-repeat;transition:background-size .3s,color .2s;padding-bottom:2px}
+nav a:hover{color:var(--ink);background-size:100% 2px}
+
+/* hero */
+.hero{padding:64px 0 40px}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(2.3rem,7vw,4.6rem);line-height:1.05;letter-spacing:-.02em;margin:0 0 20px}
+h1 .line{display:block;overflow:hidden;padding-bottom:.08em}
+h1 .line span{display:block;animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+h1 .line:nth-child(2) span{animation-delay:.12s}
+h1 .line:nth-child(3) span{animation-delay:.24s}
+@keyframes rise{from{transform:translateY(105%)}to{transform:none}}
+.lead{font-size:1.2rem;color:var(--muted);max-width:36em;margin:0 0 28px;animation:fade .9s .5s both}
+.actions{animation:fade .9s .6s both}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+.btn{display:inline-block;background:var(--ink);color:#fff;padding:13px 24px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid var(--ink);transition:transform .2s,background .2s,color .2s}
+.btn:hover{background:var(--teal);border-color:var(--teal);transform:translateY(-2px)}
+.btn.alt{background:transparent;color:var(--ink)}
+.btn.alt:hover{background:var(--ink);border-color:var(--ink);color:#fff}
+
+/* timeline: the signature element */
+.timeline{margin-top:48px;position:relative}
+.ruler{height:22px;border-bottom:2px solid var(--ink);background:repeating-linear-gradient(90deg,var(--ink) 0 1px,transparent 1px 48px) bottom/100% 10px repeat-x;opacity:.5}
+.track{display:grid;grid-template-columns:repeat(12,1fr);gap:6px;margin-top:6px}
+.clip{padding:12px 16px;border-radius:6px;color:#fff;font-family:var(--display);font-weight:700;font-size:1rem;line-height:1.2;min-height:54px;display:flex;align-items:center;transform-origin:left center;animation:clipIn .8s cubic-bezier(.2,.7,.2,1) both;transition:filter .2s,transform .2s}
+.clip:hover{filter:brightness(1.12);transform:translateY(-2px)}
+.dk{color:var(--ink)}
+@keyframes clipIn{from{transform:scaleX(0);opacity:0}to{transform:none;opacity:1}}
+.t1 .clip:nth-child(1){animation-delay:.3s}.t1 .clip:nth-child(2){animation-delay:.42s}
+.t2 .clip:nth-child(1){animation-delay:.54s}.t2 .clip:nth-child(2){animation-delay:.66s}.t2 .clip:nth-child(3){animation-delay:.78s}
+.t3 .clip:nth-child(1){animation-delay:.9s}.t3 .clip:nth-child(2){animation-delay:1.02s}
+.t1 .a{grid-column:1/8;background:var(--teal)}   .t1 .b{grid-column:8/13;background:var(--green)}
+.t2 .a{grid-column:1/5;background:var(--violet)} .t2 .b{grid-column:5/9;background:var(--blue)} .t2 .c{grid-column:9/13;background:var(--rose)}
+.t3 .a{grid-column:1/6;background:var(--orange)} .t3 .b{grid-column:6/13;background:var(--amber)}
+.playhead{position:absolute;top:0;bottom:0;left:0;width:2px;background:var(--rose);animation:sweep 3.4s .2s cubic-bezier(.45,.1,.2,1) forwards}
+.playhead::before{content:"";position:absolute;top:-2px;left:-6px;border:7px solid transparent;border-top:10px solid var(--rose);border-bottom:0}
+@keyframes sweep{to{left:68%}}
+
+/* sections */
+section{padding:60px 0;border-top:1px solid var(--line)}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(1.7rem,4vw,2.4rem);margin:0 0 12px;letter-spacing:-.01em}
+.sub{color:var(--muted);max-width:38em;margin:0 0 28px}
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.js .reveal.in{opacity:1;transform:none}
+
+.video{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:8px;overflow:hidden}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.more{display:grid;gap:18px;margin-top:18px}
+@media(min-width:700px){.more{grid-template-columns:1fr 1fr}}
+.caption{color:var(--muted);margin:10px 0 0;font-size:.98rem}
+.cta-row{margin-top:26px}
+
+.services{list-style:none;margin:0;padding:0}
+.services li{display:grid;grid-template-columns:6px 1fr;gap:0 20px;padding:20px 0;border-bottom:1px solid var(--line);transition:padding-left .3s}
+.services li:hover{padding-left:10px}
+.services li:last-child{border-bottom:0}
+.bar{border-radius:3px;background:var(--c);transform-origin:top;transition:transform .3s}
+.services li:hover .bar{transform:scaleY(1.0) scaleX(1.8)}
+.services h3{font-family:var(--display);font-size:1.25rem;margin:0 0 4px}
+.services p{margin:0;color:var(--muted);max-width:42em}
+
+.posts{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.posts a{display:block;padding:18px 20px;border:2px solid var(--line);border-radius:8px;text-decoration:none;font-weight:500;transition:border-color .2s,transform .2s}
+.posts a:hover{border-color:var(--teal);transform:translateX(6px)}
+.posts small{display:block;color:var(--muted);font-weight:400}
+
+.about{display:grid;gap:28px}
+.about p{max-width:40em;margin:0 0 14px}
+@media(min-width:760px){.about{grid-template-columns:1fr 1fr}}
+
+.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+footer{padding:28px 0 40px;color:var(--muted);font-size:.95rem;border-top:1px solid var(--line)}
+
+@media(max-width:600px){
+  .t1 .clip,.t2 .clip,.t3 .clip{grid-column:1/13}
+  .playhead{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .reveal{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="wrap">
+    <!-- CHANGE: her name -->
+    <a class="brand" href="#top">Subiya Tabassum</a>
+    <nav aria-label="Main">
+      <a href="#work">Work</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<div class="wrap hero">
+  <!-- CHANGE: the headline, one sentence on what she does -->
+  <h1><span class="line"><span>I make videos, content</span></span><span class="line"><span>and strategy that get</span></span><span class="line"><span>brands seen.</span></span></h1>
+  <p class="lead">Video editing, social media, SEO and blog writing for creators and small businesses, from one person who understands your audience.</p>
+  <div class="actions">
+    <a class="btn" href="#contact">Work with me</a>
+    <a class="btn alt" href="#work">See my work</a>
+  </div>
+
+  <div class="timeline" aria-label="My services laid out like a video editing timeline">
+    <div class="ruler" aria-hidden="true"></div>
+    <div class="track t1"><div class="clip a">Video editing</div><div class="clip b">SEO</div></div>
+    <div class="track t2"><div class="clip a">Social media management</div><div class="clip b">Social media marketing</div><div class="clip c">Community</div></div>
+    <div class="track t3"><div class="clip a">Blog writing</div><div class="clip b dk">Content strategy</div></div>
+    <div class="playhead" aria-hidden="true"></div>
+  </div>
+</div>
+
+<section id="work">
+  <div class="wrap">
+    <h2 class="reveal">My work</h2>
+    <p class="sub reveal">A selection of recent video work. More is in my full portfolio.</p>
+
+    <div class="reveal">
+      <div class="video">
+        <!-- CHANGE: main video. YouTube: replace "https://drive.google.com/file/d/1H9F8t2AtRhzqOziYB7w2EM4sN4fVz7OX/view?usp=drivesdk" (watch?v=ID).
+             Google Drive instead: use https://drive.google.com/file/d/YOUR_FILE_ID/preview -->
+        <iframe src="https://www.youtube.com/embed/"https://drive.google.com/file/d/1H9F8t2AtRhzqOziYB7w2EM4sN4fVz7OX/view?usp=drivesdk"" title="Portfolio reel" allow="encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <!-- CHANGE: describe the video -->
+      <p class="caption">Portfolio reel: recent edits for creators and small businesses.</p>
+    </div>
+
+    <div class="more reveal">
+      <div>
+        <div class="video"><iframe src="https://www.youtube.com/embed/"https://drive.google.com/file/d/1H9F8t2AtRhzqOziYB7w2EM4sN4fVz7OX/view?usp=drivesdk"_2" title="Project 2" allow="encrypted-media" allowfullscreen loading="lazy"></iframe></div>
+        <p class="caption">Project name: what you did on it.</p>
+      </div>
+      <div>
+        <div class="video"><iframe src="https://www.youtube.com/embed/"https://drive.google.com/file/d/1H9F8t2AtRhzqOziYB7w2EM4sN4fVz7OX/view?usp=drivesdk"_3" title="Project 3" allow="encrypted-media" allowfullscreen loading="lazy"></iframe></div>
+        <p class="caption">Project name: what you did on it.</p>
+      </div>
+    </div>
+
+    <div class="cta-row reveal">
+      <!-- CHANGE: paste her Google Drive portfolio folder link (sharing set to "Anyone with the link") -->
+      <a class="btn alt" href=""https://drive.google.com/file/d/1H9F8t2AtRhzqOziYB7w2EM4sN4fVz7OX/view?usp=drivesdk"" target="_blank" rel="noopener">View full portfolio</a>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <h2 class="reveal">What I do</h2>
+    <ul class="services">
+      <li class="reveal" style="--c:var(--teal)"><span class="bar"></span><div><h3>Video editing</h3><!-- CHANGE: edit each description in her words --><p>Reels, shorts, YouTube videos and promos, with strong pacing, clean captions and sound that holds attention.</p></div></li>
+      <li class="reveal" style="--c:var(--violet)"><span class="bar"></span><div><h3>Social media management</h3><p>Planning, posting and tracking your pages so they stay active, consistent and on brand.</p></div></li>
+      <li class="reveal" style="--c:var(--blue)"><span class="bar"></span><div><h3>Social media marketing</h3><p>Campaigns and content that bring new followers, enquiries and customers, with reports on what worked.</p></div></li>
+      <li class="reveal" style="--c:var(--rose)"><span class="bar"></span><div><h3>Community management</h3><p>Replying to comments and messages, welcoming followers and keeping your community friendly and engaged.</p></div></li>
+      <li class="reveal" style="--c:var(--amber)"><span class="bar"></span><div><h3>Content strategy</h3><p>A clear monthly plan: what to post, when and why, based on your goals and your audience.</p></div></li>
+      <li class="reveal" style="--c:var(--green)"><span class="bar"></span><div><h3>SEO</h3><p>Keyword research, page and blog optimisation and Google Business Profile setup, so people find you when they search.</p></div></li>
+      <li class="reveal" style="--c:var(--orange)"><span class="bar"></span><div><h3>Blog writing</h3><p>Helpful, search-friendly articles that build trust and bring steady visitors to your website.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about">
+    <div class="reveal">
+      <h2>About me</h2>
+      <!-- CHANGE: 2-3 short paragraphs about her -->
+      <p>Hi, I'm Subiya Tabassum. I help creators and small businesses show up online with videos and content that feel like them.</p>
+      <p>I have worked on video editing, social media, SEO and writing projects, including blog writing for a startup I work with. I care about clear communication and on-time delivery.</p>
+    </div>
+    <div class="reveal">
+      <h2>How we work</h2>
+      <p>Tell me what you need. I send a plan and a price. After you approve, I deliver the work and make revisions until you are happy.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2 class="reveal">Let's work together</h2>
+    <p class="sub reveal">Send a message with what you need and your deadline. I reply within one working day.</p>
+    <div class="links reveal">
+      <!-- CHANGE: her email -->
+      <a class="btn" href="mailto:subiyarif@gmail.com">Send an email</a>
+      <!-- CHANGE: her LinkedIn profile link -->
+      <a class="btn alt" href="https://www.linkedin.com/in/subiya-tabassum-250aab3a0?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener">LinkedIn</a>
+      <!-- CHANGE: her Instagram -->
+      <a class="btn alt" href="https://www.instagram.com/bintearif._" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer><div class="wrap">&copy; 2026 Subiya Tabassum. All rights reserved.</div></footer>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+  },{threshold:.12});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
