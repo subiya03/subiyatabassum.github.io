@@ -6,7 +6,7 @@
 <script>document.documentElement.classList.add('js');</script>
 
 <!-- CHANGE: shows on the browser tab and in Google results -->
-<title>Subiya Tabassum | Video Editor, Social Media & SEO Specialist</title>
+<title>Subiya Tabassum | Video Editor & Social Media Specialist</title>
 <!-- CHANGE: shows under the title in Google results -->
 <meta name="description" content="Video editing, social media management and marketing, community management, content strategy, SEO and blog writing for creators and small businesses.">
 
@@ -54,6 +54,7 @@ h1 .line:nth-child(3) span{animation-delay:.24s}
 .btn.alt{background:transparent;color:var(--ink)}
 .btn.alt:hover{background:var(--ink);border-color:var(--ink);color:#fff}
 
+
 /* timeline: the signature element */
 .timeline{margin-top:48px;position:relative}
 .ruler{height:22px;border-bottom:2px solid var(--ink);background:repeating-linear-gradient(90deg,var(--ink) 0 1px,transparent 1px 48px) bottom/100% 10px repeat-x;opacity:.5}
@@ -72,6 +73,7 @@ h1 .line:nth-child(3) span{animation-delay:.24s}
 .playhead::before{content:"";position:absolute;top:-2px;left:-6px;border:7px solid transparent;border-top:10px solid var(--rose);border-bottom:0}
 @keyframes sweep{to{left:68%}}
 
+
 /* sections */
 section{padding:60px 0;border-top:1px solid var(--line)}
 h2{font-family:var(--display);font-weight:800;font-size:clamp(1.7rem,4vw,2.4rem);margin:0 0 12px;letter-spacing:-.01em}
@@ -82,6 +84,11 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(1.7rem,4vw,2.4rem)
 .video{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:8px;overflow:hidden}
 .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .more{display:grid;gap:18px;margin-top:18px}
+.experience-card{border:2px solid var(--line);border-radius:8px;padding:22px;background:rgba(255,255,255,.28)}
+.experience-card h3{font-family:var(--display);font-size:1.35rem;margin:0 0 8px}
+.experience-card .caption{margin:0 0 18px}
+.experience-card .btn{font-size:.95rem;padding:10px 18px}
+
 @media(min-width:700px){.more{grid-template-columns:1fr 1fr}}
 .caption{color:var(--muted);margin:10px 0 0;font-size:.98rem}
 .cta-row{margin-top:26px}
@@ -107,10 +114,6 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(1.7rem,4vw,2.4rem)
 .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
 footer{padding:28px 0 40px;color:var(--muted);font-size:.95rem;border-top:1px solid var(--line)}
 
-@media(max-width:600px){
-  .t1 .clip,.t2 .clip,.t3 .clip{grid-column:1/13}
-  .playhead{display:none}
-}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
   .js .reveal{opacity:1;transform:none}
@@ -153,26 +156,23 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.95rem;border-top:1px so
 <section id="work">
   <div class="wrap">
     <h2 class="reveal">My work</h2>
-    <p class="sub reveal">A selection of recent video work. More is in my full portfolio.</p>
-
-    <div class="reveal">
-      <div class="video">
-        <!-- CHANGE: main video. YouTube: replace "https://drive.google.com/file/d/1H9F8t2AtRhzqOziYB7w2EM4sN4fVz7OX/view?usp=drivesdk" (watch?v=ID).
-             Google Drive instead: use https://drive.google.com/file/d/1H9F8t2AtRhzqOziYB7w2EM4sN4fVz7OX/view?usp=drivesdkw -->
-        <iframe src="https://www.youtube.com/embed/"https://drive.google.com/file/d/1H9F8t2AtRhzqOziYB7w2EM4sN4fVz7OX/view?usp=drivesdk"" title="Portfolio reel" allow="encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-      </div>
-      <!-- CHANGE: describe the video -->
-      <p class="caption">Portfolio reel: recent edits for creators and small businesses.</p>
-    </div>
+    <p class="sub reveal">I have around one year of experience working with Khidma, and I currently work with both Khidma and Guiding Star.</p>
 
     <div class="more reveal">
-      <div>
+      <div class="experience-card">
+        <h3>Khidma</h3>
+        <p class="caption">I have been working with Khidma for around a year, and I continue to work with the team.</p>
+        <a class="btn alt" href="https://www.instagram.com/khidma_live/" target="_blank" rel="noopener">Visit Khidma on Instagram</a>
+      </div>
+      <div class="experience-card">
+        <h3>Guiding Star</h3>
+        <p class="caption">I also currently work with Guiding Star, contributing to its content and online presence.</p>
+        <a class="btn alt" href="https://www.instagram.com/guidingstar.lifecoaching/" target="_blank" rel="noopener">Visit Guiding Star on Instagram</a>
       </div>
     </div>
 
     <div class="cta-row reveal">
-      <!-- CHANGE: paste her Google Drive portfolio folder link (sharing set to "Anyone with the link") -->
-      <a class="btn alt" href=""https://drive.google.com/file/d/1H9F8t2AtRhzqOziYB7w2EM4sN4fVz7OX/view?usp=drivesdk"" target="_blank" rel="noopener">View full portfolio</a>
+      <a class="btn" href="https://drive.google.com/file/d/1H9F8t2AtRhzqOziYB7w2EM4sN4fVz7OX/view?usp=drivesdk" target="_blank" rel="noopener">View full portfolio</a>
     </div>
   </div>
 </section>
@@ -213,11 +213,11 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.95rem;border-top:1px so
     <p class="sub reveal">Send a message with what you need and your deadline. I reply within one working day.</p>
     <div class="links reveal">
       <!-- CHANGE: her email -->
-      <a class="btn" href="mailto:subiyarif@gmail.com">Send an email</a>
+      <a class="btn" href="https://mail.google.com/mail/?view=cm&amp;to=subiyarif%40gmail.com" target="_blank" rel="noopener">Email me</a>
       <!-- CHANGE: her LinkedIn profile link -->
-      <a class="btn alt" href="https://www.linkedin.com/in/subiya-tabassum-250aab3a0?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn alt" href="https://www.linkedin.com/in/subiya-tabassum-250aab3a0/" target="_blank" rel="noopener">LinkedIn</a>
       <!-- CHANGE: her Instagram -->
-      <a class="btn alt" href="https://www.instagram.com/bintearif._" target="_blank" rel="noopener">Instagram</a>
+      <a class="btn alt" href="https://www.instagram.com/bintearif._/" target="_blank" rel="noopener">Instagram</a>
     </div>
   </div>
 </section>
