@@ -5,9 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>document.documentElement.classList.add('js');</script>
 
-<!-- CHANGE: shows on the browser tab and in Google results -->
 <title>Subiya Tabassum | Video Editor & Social Media Specialist</title>
-<!-- CHANGE: shows under the title in Google results -->
 <meta name="description" content="Video editing, social media management and marketing, community management, content strategy, SEO and blog writing for creators and small businesses.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,7 +33,7 @@ header .wrap{display:flex;justify-content:space-between;align-items:center;gap:1
 .brand{font-family:var(--display);font-weight:800;font-size:1.15rem;text-decoration:none}
 nav{display:flex;gap:20px;flex-wrap:wrap}
 nav a{text-decoration:none;font-weight:500;color:var(--muted);background:linear-gradient(var(--teal),var(--teal)) 0 100%/0 2px no-repeat;transition:background-size .3s,color .2s;padding-bottom:2px}
-nav a:hover{color:var(--ink);background-size:100% 2px}
+nav a:hover,nav a.active{color:var(--ink);background-size:100% 2px}
 
 /* hero */
 .hero{padding:64px 0 40px}
@@ -50,10 +48,10 @@ h1 .line:nth-child(3) span{animation-delay:.24s}
 @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 
 .btn{display:inline-block;background:var(--ink);color:#fff;padding:13px 24px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid var(--ink);transition:transform .2s,background .2s,color .2s}
+button.btn{font:inherit;font-weight:700;cursor:pointer}
 .btn:hover{background:var(--teal);border-color:var(--teal);transform:translateY(-2px)}
 .btn.alt{background:transparent;color:var(--ink)}
 .btn.alt:hover{background:var(--ink);border-color:var(--ink);color:#fff}
-
 
 /* timeline: the signature element */
 .timeline{margin-top:48px;position:relative}
@@ -73,7 +71,6 @@ h1 .line:nth-child(3) span{animation-delay:.24s}
 .playhead::before{content:"";position:absolute;top:-2px;left:-6px;border:7px solid transparent;border-top:10px solid var(--rose);border-bottom:0}
 @keyframes sweep{to{left:68%}}
 
-
 /* sections */
 section{padding:60px 0;border-top:1px solid var(--line)}
 h2{font-family:var(--display);font-weight:800;font-size:clamp(1.7rem,4vw,2.4rem);margin:0 0 12px;letter-spacing:-.01em}
@@ -81,14 +78,11 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(1.7rem,4vw,2.4rem)
 .js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
 .js .reveal.in{opacity:1;transform:none}
 
-.video{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:8px;overflow:hidden}
-.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .more{display:grid;gap:18px;margin-top:18px}
 .experience-card{border:2px solid var(--line);border-radius:8px;padding:22px;background:rgba(255,255,255,.28)}
 .experience-card h3{font-family:var(--display);font-size:1.35rem;margin:0 0 8px}
 .experience-card .caption{margin:0 0 18px}
 .experience-card .btn{font-size:.95rem;padding:10px 18px}
-
 @media(min-width:700px){.more{grid-template-columns:1fr 1fr}}
 .caption{color:var(--muted);margin:10px 0 0;font-size:.98rem}
 .cta-row{margin-top:26px}
@@ -101,11 +95,6 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(1.7rem,4vw,2.4rem)
 .services li:hover .bar{transform:scaleY(1.0) scaleX(1.8)}
 .services h3{font-family:var(--display);font-size:1.25rem;margin:0 0 4px}
 .services p{margin:0;color:var(--muted);max-width:42em}
-
-.posts{list-style:none;margin:0;padding:0;display:grid;gap:12px}
-.posts a{display:block;padding:18px 20px;border:2px solid var(--line);border-radius:8px;text-decoration:none;font-weight:500;transition:border-color .2s,transform .2s}
-.posts a:hover{border-color:var(--teal);transform:translateX(6px)}
-.posts small{display:block;color:var(--muted);font-weight:400}
 
 .about{display:grid;gap:28px}
 .about p{max-width:40em;margin:0 0 14px}
@@ -125,7 +114,6 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.95rem;border-top:1px so
 <body>
 <header>
   <div class="wrap">
-    <!-- CHANGE: her name -->
     <a class="brand" href="#top">Subiya Tabassum</a>
     <nav aria-label="Main">
       <a href="#work">Work</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a>
@@ -136,9 +124,8 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.95rem;border-top:1px so
 <main id="top">
 
 <div class="wrap hero">
-  <!-- CHANGE: the headline, one sentence on what she does -->
-  <h1><span class="line"><span>I make videos, content</span></span><span class="line"><span>and strategy that get</span></span><span class="line"><span>brands seen.</span></span></h1>
-  <p class="lead">Video editing, social media, SEO and blog writing for creators and small businesses, from one person who understands your audience.</p>
+  <h1><span class="line"><span>I turn ideas into content</span></span><span class="line"><span>that helps you connect,</span></span><span class="line"><span>communicate and grow.</span></span></h1>
+  <p class="lead">I help startups, institutes, personal brands, creators and small businesses build their online presence through video editing, social media management, content creation and digital experiences.</p>
   <div class="actions">
     <a class="btn" href="#contact">Work with me</a>
     <a class="btn alt" href="#work">See my work</a>
@@ -156,13 +143,13 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.95rem;border-top:1px so
 <section id="work">
   <div class="wrap">
     <h2 class="reveal">My work</h2>
-    <p class="sub reveal">I have around one year of experience working with Khidma, and I currently work with both Khidma and Guiding Star.</p>
+    <p class="sub reveal">I have around one year of experience working with Khidma.live, and I currently work with both Khidma.live and Guiding Star.</p>
 
     <div class="more reveal">
       <div class="experience-card">
-        <h3>Khidma</h3>
-        <p class="caption">I have been working with Khidma for around a year, and I continue to work with the team.</p>
-        <a class="btn alt" href="https://www.instagram.com/khidma_live/" target="_blank" rel="noopener">Visit Khidma on Instagram</a>
+        <h3>Khidma.live</h3>
+        <p class="caption">I have been working with Khidma.live for around a year, and I continue to work with the team.</p>
+        <a class="btn alt" href="https://www.instagram.com/khidma_live/" target="_blank" rel="noopener">Visit Khidma.live on Instagram</a>
       </div>
       <div class="experience-card">
         <h3>Guiding Star</h3>
@@ -181,7 +168,7 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.95rem;border-top:1px so
   <div class="wrap">
     <h2 class="reveal">What I do</h2>
     <ul class="services">
-      <li class="reveal" style="--c:var(--teal)"><span class="bar"></span><div><h3>Video editing</h3><!-- CHANGE: edit each description in her words --><p>Reels, shorts, YouTube videos and promos, with strong pacing, clean captions and sound that holds attention.</p></div></li>
+      <li class="reveal" style="--c:var(--teal)"><span class="bar"></span><div><h3>Video editing</h3><p>Reels, shorts, YouTube videos and promos, with strong pacing, clean captions and sound that holds attention.</p></div></li>
       <li class="reveal" style="--c:var(--violet)"><span class="bar"></span><div><h3>Social media management</h3><p>Planning, posting and tracking your pages so they stay active, consistent and on brand.</p></div></li>
       <li class="reveal" style="--c:var(--blue)"><span class="bar"></span><div><h3>Social media marketing</h3><p>Campaigns and content that bring new followers, enquiries and customers, with reports on what worked.</p></div></li>
       <li class="reveal" style="--c:var(--rose)"><span class="bar"></span><div><h3>Community management</h3><p>Replying to comments and messages, welcoming followers and keeping your community friendly and engaged.</p></div></li>
@@ -196,13 +183,13 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.95rem;border-top:1px so
   <div class="wrap about">
     <div class="reveal">
       <h2>About me</h2>
-      <!-- CHANGE: 2-3 short paragraphs about her -->
-      <p>Hi, I'm Subiya Tabassum. I help creators and small businesses show up online with videos and content that feel like them.</p>
-      <p>I have worked on video editing, social media, SEO and writing projects, including blog writing for a startup I work with. I care about clear communication and on-time delivery.</p>
+      <p>I\'m Subiya Tabassum Binte Mohammed Arif.</p>
+      <p>I'm someone who enjoys learning, exploring new ideas and finding thoughtful ways to bring them to life. I believe how we work matters just as much as what we create.</p>
+      <p>For me, growth isn't just about doing more, but about doing things with purpose.</p>
     </div>
     <div class="reveal">
-      <h2>How we work</h2>
-      <p>Tell me what you need. I send a plan and a price. After you approve, I deliver the work and make revisions until you are happy.</p>
+      <h2>How I work</h2>
+      <p>I focus on understanding your audience, finding the right creative direction and making sure every piece of work has a purpose. Whether it's a video, a design or a content strategy, I believe in keeping the process thoughtful, clear and collaborative.</p>
     </div>
   </div>
 </section>
@@ -210,14 +197,10 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.95rem;border-top:1px so
 <section id="contact">
   <div class="wrap">
     <h2 class="reveal">Let's work together</h2>
-    <p class="sub reveal">Send a message with what you need and your deadline. I reply within one working day.</p>
+    <p class="sub reveal">Have an idea? Let's turn your next idea into something meaningful. Whether you need help with content, design, video editing or your online presence, let's make it happen. Send a message with what you need. I reply within one working day.</p>
     <div class="links reveal">
-      <!-- CHANGE: her email -->
       <a class="btn" href="https://mail.google.com/mail/?view=cm&amp;to=subiyarif%40gmail.com" target="_blank" rel="noopener">Email me</a>
-      <!-- CHANGE: her LinkedIn profile link -->
       <a class="btn alt" href="https://www.linkedin.com/in/subiya-tabassum-250aab3a0/" target="_blank" rel="noopener">LinkedIn</a>
-      <!-- CHANGE: her Instagram -->
-      <a class="btn alt" href="https://www.instagram.com/bintearif._/" target="_blank" rel="noopener">Instagram</a>
     </div>
   </div>
 </section>
@@ -228,12 +211,32 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.95rem;border-top:1px so
 
 <script>
 (function(){
+  /* fade-in on scroll */
   var els=document.querySelectorAll('.reveal');
-  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
-  },{threshold:.12});
-  els.forEach(function(e){io.observe(e)});
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});}
+  else{
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+    },{threshold:.12});
+    els.forEach(function(e){io.observe(e)});
+  }
+
+  /* underline the menu item of the section you are viewing */
+  var links=document.querySelectorAll('nav a');
+  var ids=['work','services','about','contact'];
+  function spy(){
+    var current=null;
+    ids.forEach(function(id){
+      var s=document.getElementById(id);
+      if(s && s.getBoundingClientRect().top <= window.innerHeight*0.35){current=id;}
+    });
+    if(window.innerHeight+window.scrollY>=document.body.scrollHeight-4){current='contact';}
+    links.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+current);});
+  }
+  window.addEventListener('scroll',spy,{passive:true});
+  window.addEventListener('resize',spy);
+  spy();
+
 })();
 </script>
 </body>
