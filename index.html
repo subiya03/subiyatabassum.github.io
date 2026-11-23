@@ -103,6 +103,32 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(1.7rem,4vw,2.4rem)
 .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
 footer{padding:28px 0 40px;color:var(--muted);font-size:.95rem;border-top:1px solid var(--line)}
 
+.values-box{border-left:6px solid var(--green);padding:6px 0 6px 22px;max-width:44em}
+.values-box p{margin:0 0 14px}
+.values-box ul{margin:0 0 14px;padding-left:1.2em}
+.values-box li{margin-bottom:6px}
+
+
+/* ---- 3D hero + film strip ---- */
+.hero{display:grid;gap:40px;align-items:center;padding:56px 22px 52px}
+@media(min-width:900px){.hero{grid-template-columns:1.05fr .95fr;gap:48px}}
+.hero h1{font-size:clamp(2.1rem,4.6vw,3.7rem)}
+.scene{perspective:1300px;display:flex;justify-content:center;align-items:center;padding:30px 0}
+.board{position:relative;width:100%;max-width:520px;transform-style:preserve-3d;transform:rotateX(32deg) rotateY(-18deg) rotateZ(2deg);transition:transform .25s ease-out}
+.board::before{content:"";position:absolute;inset:-20px -20px -20px -20px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 40px 60px rgba(22,33,43,.14);transform:translateZ(-30px)}
+.board .ruler{position:relative;margin-bottom:8px}
+.lane{position:relative;margin-top:10px;filter:drop-shadow(0 14px 12px rgba(22,33,43,.18))}
+.lane.t1{transform:translateZ(14px)}.lane.t2{transform:translateZ(40px)}.lane.t3{transform:translateZ(66px)}
+.board .clip{font-size:.82rem;padding:8px 12px;min-height:46px;border-radius:5px}
+.board .playhead{top:-6px;bottom:-6px;transform:translateZ(90px);animation:sweep 3.4s .2s cubic-bezier(.45,.1,.2,1) forwards}
+.film{height:38px;margin:0;background:
+ linear-gradient(90deg,var(--bg) 14px,transparent 14px) 0 6px/30px 9px repeat-x,
+ linear-gradient(90deg,var(--bg) 14px,transparent 14px) 0 23px/30px 9px repeat-x,var(--ink);animation:film 2.2s linear infinite}
+@keyframes film{to{background-position:-30px 6px,-30px 23px,0 0}}
+.experience-card{transition:transform .25s ease,border-color .25s;transform-style:preserve-3d}
+.experience-card:hover{border-color:var(--teal)}
+@media(prefers-reduced-motion:reduce){.board{transform:rotateX(20deg) rotateY(-10deg)}}
+
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
   .js .reveal{opacity:1;transform:none}
@@ -124,21 +150,27 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.95rem;border-top:1px so
 <main id="top">
 
 <div class="wrap hero">
-  <h1><span class="line"><span>I turn ideas into content</span></span><span class="line"><span>that helps you connect,</span></span><span class="line"><span>communicate and grow.</span></span></h1>
-  <p class="lead">I help startups, institutes, personal brands, creators and small businesses build their online presence through video editing, social media management, content creation and digital experiences.</p>
-  <div class="actions">
-    <a class="btn" href="#contact">Work with me</a>
-    <a class="btn alt" href="#work">See my work</a>
+  <div class="txt">
+    <h1><span class="line"><span>I turn ideas into content</span></span><span class="line"><span>that helps you connect,</span></span><span class="line"><span>communicate and grow.</span></span></h1>
+    <p class="lead">I help startups, institutes, personal brands, creators and small businesses build their online presence through video editing, social media management, content creation and digital experiences.</p>
+    <div class="actions">
+      <a class="btn" href="#contact">Work with me</a>
+      <a class="btn alt" href="#work">See my work</a>
+    </div>
   </div>
 
-  <div class="timeline" aria-label="My services laid out like a video editing timeline">
-    <div class="ruler" aria-hidden="true"></div>
-    <div class="track t1"><div class="clip a">Video editing</div><div class="clip b">SEO</div></div>
-    <div class="track t2"><div class="clip a">Social media management</div><div class="clip b">Social media marketing</div><div class="clip c">Community</div></div>
-    <div class="track t3"><div class="clip a">Blog writing</div><div class="clip b dk">Content strategy</div></div>
-    <div class="playhead" aria-hidden="true"></div>
+  <div class="scene" id="scene" aria-label="My services laid out as layered tracks on a video editing timeline">
+    <div class="board" id="board">
+      <div class="ruler" aria-hidden="true"></div>
+      <div class="track t1 lane"><div class="clip a">Video editing</div><div class="clip b">SEO</div></div>
+      <div class="track t2 lane"><div class="clip a">Social media management</div><div class="clip b">Social media marketing</div><div class="clip c">Community</div></div>
+      <div class="track t3 lane"><div class="clip a">Blog writing</div><div class="clip b dk">Content strategy</div></div>
+      <div class="playhead" aria-hidden="true"></div>
+    </div>
   </div>
 </div>
+
+<div class="film" aria-hidden="true"></div>
 
 <section id="work">
   <div class="wrap">
@@ -146,12 +178,12 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.95rem;border-top:1px so
     <p class="sub reveal">I have around one year of experience working with Khidma.live, and I currently work with both Khidma.live and Guiding Star.</p>
 
     <div class="more reveal">
-      <div class="experience-card">
+      <div class="experience-card tilt">
         <h3>Khidma.live</h3>
         <p class="caption">I have been working with Khidma.live for around a year, and I continue to work with the team.</p>
         <a class="btn alt" href="https://www.instagram.com/khidma_live/" target="_blank" rel="noopener">Visit Khidma.live on Instagram</a>
       </div>
-      <div class="experience-card">
+      <div class="experience-card tilt">
         <h3>Guiding Star</h3>
         <p class="caption">I also currently work with Guiding Star, contributing to its content and online presence.</p>
         <a class="btn alt" href="https://www.instagram.com/guidingstar.lifecoaching/" target="_blank" rel="noopener">Visit Guiding Star on Instagram</a>
@@ -183,13 +215,27 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.95rem;border-top:1px so
   <div class="wrap about">
     <div class="reveal">
       <h2>About me</h2>
-      <p>I'm Subiya Tabassum Binte Mohammed Arif.</p>
+      <p>I\'m Subiya Tabassum Binte Mohammed Arif.</p>
       <p>I'm someone who enjoys learning, exploring new ideas and finding thoughtful ways to bring them to life. I believe how we work matters just as much as what we create.</p>
       <p>For me, growth isn't just about doing more, but about doing things with purpose.</p>
     </div>
     <div class="reveal">
       <h2>How I work</h2>
       <p>I focus on understanding your audience, finding the right creative direction and making sure every piece of work has a purpose. Whether it's a video, a design or a content strategy, I believe in keeping the process thoughtful, clear and collaborative.</p>
+    </div>
+  </div>
+</section>
+
+<section id="values">
+  <div class="wrap">
+    <h2 class="reveal">A note on my work &amp; values</h2>
+    <div class="values-box reveal">
+      <p>My work is guided by Islamic values, sincerity and ethical creativity. I aim to create meaningful content while staying within halal boundaries.</p>
+      <ul>
+        <li>No songs or music in my video edits.</li>
+        <li>No promoting products or services that conflict with my values.</li>
+      </ul>
+      <p>Thank you for respecting my principles.</p>
     </div>
   </div>
 </section>
@@ -237,6 +283,18 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.95rem;border-top:1px so
   window.addEventListener('resize',spy);
   spy();
 
+  /* 3D motion: scene follows the mouse, cards tilt */
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var sc=document.getElementById('scene'),bd=document.getElementById('board');
+  if(!reduce&&sc&&bd){
+    sc.addEventListener('mousemove',function(e){var r=sc.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;
+      bd.style.transform='rotateX('+(32-py*14)+'deg) rotateY('+(-18+px*18)+'deg) rotateZ(2deg)';});
+    sc.addEventListener('mouseleave',function(){bd.style.transform='';});
+    document.querySelectorAll('.tilt').forEach(function(c){
+      c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;
+        c.style.transform='perspective(800px) rotateY('+(px*9)+'deg) rotateX('+(-py*9)+'deg)';});
+      c.addEventListener('mouseleave',function(){c.style.transform='';});});
+  }
 })();
 </script>
 </body>
